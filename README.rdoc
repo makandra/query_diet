@@ -1,6 +1,6 @@
-= query_diet
+= Query Diet
 
-query_diet counts the number of database queries for the last request and *subtly* displays it in the upper right corner of your screen.
+Query Diet counts the number of database queries for the last request and *subtly* displays it in the upper right corner of your screen.
 The display turns red if too many queries are run, or if they take too long.
 This is useful to prevent {N + 1 queries}[http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations] from creeping into your code.
 
