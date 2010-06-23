@@ -1,0 +1,5 @@
+doc
+pkg
+*.gem
+.idea
+

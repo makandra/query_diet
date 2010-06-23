@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="GemRequirementsHolder" version="2">
+    <requirement>
+      <requirement>
+        <dependency name="rails" version="0" bound="GREATER_OR_EQUAL" git="false" />
+      </requirement>
+      <source from="spec/app_root/config/boot.rb" />
+    </requirement>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rails (v2.3.5, /usr/lib/ruby/gems/1.8/gems/rails-2.3.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord (v2.3.5, /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rack (v1.0.1, /usr/lib/ruby/gems/1.8/gems/rack-1.0.1)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.8.7, /usr/lib/ruby/gems/1.8/gems/rake-0.8.7)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activesupport (v2.3.5, /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionpack (v2.3.5, /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] actionmailer (v2.3.5, /usr/lib/ruby/gems/1.8/gems/actionmailer-2.3.5)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] activeresource (v2.3.5, /usr/lib/ruby/gems/1.8/gems/activeresource-2.3.5)" level="application" />
+  </component>
+</module>
+
