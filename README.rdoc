@@ -4,6 +4,8 @@ Query Diet counts the number of database queries for the last request and *subtl
 The display turns red if too many queries are run, or if they take too long.
 This is useful to prevent {N + 1 queries}[http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations] from creeping into your code.
 
+You can find screenshots of the query counter in {this blog post}[http://gem-session.com/2010/06/solving-the-n-1-query-problem-with-query-diet]. 
+
 == Installation
 
 Install the gem with
@@ -31,4 +33,4 @@ We cannot guarantee Rails 3 compatibility at this point, but we will upgrade the
 
 Henning Koch
 
-{www.makandra.de}[http://www.makandra.de/]
+{gem-session.com}[http://gem-session.com/]
