@@ -17,20 +17,16 @@ module QueryDiet
         <style type="text/css"><!--
           div#query_diet {
             position: absolute;
-            top: 0px;
-            right: 0px;
+            top: 0;
+            right: 0;
             background-color: black;
             color: white;
             z-index: 999;
             padding: 4px 6px;
-            font-family; arial, sans-serif;
-            font-size: 12px;
-            line-height: 12px;
-            font-weight: bold;
+            font: normal bold 12px/12px Arial, sans-serif;
             cursor: pointer;
           }
           div#query_diet.good {
-            xbackground-color: #160;
             filter:alpha(opacity=30);
             -moz-opacity:0.3;
             -khtml-opacity: 0.3;
