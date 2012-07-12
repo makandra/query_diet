@@ -4,23 +4,18 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{query_diet}
-  s.version = "0.2.2"
+  s.name = "query_diet"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Henning Koch"]
-  s.date = %q{2011-02-18}
-  s.description = %q{Rails database query counter that stays out of your way}
-  s.email = %q{github@makandra.de}
+  s.date = "2012-07-12"
+  s.description = "Rails database query counter that stays out of your way"
+  s.email = "github@makandra.de"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
-    ".idea/encodings.xml",
-    ".idea/misc.xml",
-    ".idea/modules.xml",
-    ".idea/query_diet.iml",
-    ".idea/vcs.xml",
     "Gemfile",
     "Gemfile.lock",
     "MIT-LICENSE",
@@ -58,28 +53,10 @@ Gem::Specification.new do |s|
     "spec/support/rcov.opts",
     "spec/support/spec.opts"
   ]
-  s.homepage = %q{http://github.com/makandra/query_diet}
+  s.homepage = "http://github.com/makandra/query_diet"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
-  s.summary = %q{Rails database query counter that stays out of your way}
-  s.test_files = [
-    "spec/app_root/app/controllers/application_controller.rb",
-    "spec/app_root/app/controllers/query_diet_controller.rb",
-    "spec/app_root/app/models/movie.rb",
-    "spec/app_root/config/boot.rb",
-    "spec/app_root/config/environment.rb",
-    "spec/app_root/config/environments/in_memory.rb",
-    "spec/app_root/config/environments/mysql.rb",
-    "spec/app_root/config/environments/postgresql.rb",
-    "spec/app_root/config/environments/sqlite.rb",
-    "spec/app_root/config/environments/sqlite3.rb",
-    "spec/app_root/config/routes.rb",
-    "spec/app_root/db/migrate/001_create_movies.rb",
-    "spec/app_root/lib/console_with_fixtures.rb",
-    "spec/controllers/query_diet_controller_spec.rb",
-    "spec/logger_spec.rb",
-    "spec/spec_helper.rb"
-  ]
+  s.rubygems_version = "1.3.9.3"
+  s.summary = "Rails database query counter that stays out of your way"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -88,15 +65,21 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rails>, ["~> 2.3"])
       s.add_runtime_dependency(%q<rspec>, ["~> 1.3"])
       s.add_runtime_dependency(%q<rspec-rails>, ["~> 1.3"])
+      s.add_runtime_dependency(%q<sqlite3>, [">= 0"])
+      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["~> 2.3"])
       s.add_dependency(%q<rspec>, ["~> 1.3"])
       s.add_dependency(%q<rspec-rails>, ["~> 1.3"])
+      s.add_dependency(%q<sqlite3>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, ["~> 2.3"])
     s.add_dependency(%q<rspec>, ["~> 1.3"])
     s.add_dependency(%q<rspec-rails>, ["~> 1.3"])
+    s.add_dependency(%q<sqlite3>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 
