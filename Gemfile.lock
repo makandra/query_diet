@@ -11,6 +11,13 @@ GEM
     activeresource (2.3.11)
       activesupport (= 2.3.11)
     activesupport (2.3.11)
+    git (1.2.5)
+    jeweler (1.8.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
+    json (1.7.3)
     rack (1.1.0)
     rails (2.3.11)
       actionmailer (= 2.3.11)
@@ -20,6 +27,8 @@ GEM
       activesupport (= 2.3.11)
       rake (>= 0.8.3)
     rake (0.8.7)
+    rdoc (3.12)
+      json (~> 1.4)
     rspec (1.3.1)
     rspec-rails (1.3.3)
       rack (>= 1.0.0)
@@ -30,6 +39,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jeweler
   rails (~> 2.3)
   rspec (~> 1.3)
   rspec-rails (~> 1.3)
