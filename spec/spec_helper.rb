@@ -12,6 +12,7 @@ require 'spec/rails'
 silence_warnings {RAILS_ENV = ENV['RAILS_ENV']}
 
 # Run the migrations
+ActiveRecord::Migration.verbose = false
 ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
 
 Spec::Runner.configure do |config|
