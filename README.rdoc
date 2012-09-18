@@ -42,3 +42,5 @@ Henning Koch
 {makandra.com}[http://makandra.com/]
 
 {gem-session.com}[http://gem-session.com/]
+
+{Michael Grosser}[https://github.com/grosser]
