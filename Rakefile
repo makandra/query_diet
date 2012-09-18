@@ -1,16 +1,9 @@
 require 'rake'
-# require 'rake/testtask'
 require 'rake/rdoctask'
 require 'spec/rake/spectask'
 
-desc 'Default: Run all specs.'
-task :default => :spec
-
 desc "Run all specs"
-Spec::Rake::SpecTask.new() do |t|
-  t.spec_opts = ['--options', "\"spec/support/spec.opts\""]
-  t.spec_files = FileList['spec/**/*_spec.rb']
-end
+Spec::Rake::SpecTask.new(:default){}
 
 desc 'Generate documentation for the query_diet gem.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
@@ -34,4 +27,3 @@ begin
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install jeweler"
 end
-
