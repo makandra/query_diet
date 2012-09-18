@@ -1,24 +1,27 @@
 module QueryDiet
   class Logger
     class << self
-
-      attr_accessor :count, :time, :bad_count, :bad_time
+      attr_accessor :queries, :bad_count, :bad_time
 
       def reset
-        self.count = 0
-        self.time = 0
+        self.queries = []
       end
 
-      def log(query, &execution)
+      def log(query)
         result = nil
-        seconds = Benchmark.realtime do
-          result = execution.call
+        time = Benchmark.realtime do
+          result = yield
         end
-        if log_query?(query)
-          self.time += (seconds * 1000).to_i
-          self.count += 1
-        end
+        queries << [query, time] if log_query?(query)
         result
+      end
+
+      def time
+        (queries.sum(&:last) * 1000).to_i
+      end
+
+      def count
+        queries.size
       end
 
       def bad?
@@ -30,12 +33,10 @@ module QueryDiet
       def log_query?(query)
         query =~ /^(select|create|update|delete|insert)\b/i
       end
-
     end
 
     reset
     self.bad_count = 8
     self.bad_time = 5000
-
   end
 end
