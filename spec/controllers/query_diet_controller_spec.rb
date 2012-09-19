@@ -4,7 +4,6 @@ describe QueryDietController do
   integrate_views
 
   describe 'widget' do
-
     it "should be automatically included in a HTML page" do
       get :two_queries
       response.body.should have_tag('div#query_diet')
@@ -37,7 +36,5 @@ describe QueryDietController do
       get :no_query
       response.body.should have_tag('div#query_diet', :text => "78 / 43500ms")
     end
-
   end
-
 end

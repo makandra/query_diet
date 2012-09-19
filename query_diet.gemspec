@@ -49,37 +49,22 @@ Gem::Specification.new do |s|
     "spec/app_root/script/console",
     "spec/controllers/query_diet_controller_spec.rb",
     "spec/logger_spec.rb",
+    "spec/spec.opts",
     "spec/spec_helper.rb",
-    "spec/support/rcov.opts",
-    "spec/support/spec.opts"
+    "spec/support/rcov.opts"
   ]
   s.homepage = "http://github.com/makandra/query_diet"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.3.9.5"
+  s.rubygems_version = "1.8.24"
   s.summary = "Rails database query counter that stays out of your way"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 2.3"])
-      s.add_runtime_dependency(%q<rspec>, ["~> 1.3"])
-      s.add_runtime_dependency(%q<rspec-rails>, ["~> 1.3"])
-      s.add_runtime_dependency(%q<sqlite3>, [">= 0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["~> 2.3"])
-      s.add_dependency(%q<rspec>, ["~> 1.3"])
-      s.add_dependency(%q<rspec-rails>, ["~> 1.3"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 2.3"])
-    s.add_dependency(%q<rspec>, ["~> 1.3"])
-    s.add_dependency(%q<rspec-rails>, ["~> 1.3"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 
