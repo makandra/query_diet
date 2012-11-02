@@ -2,4 +2,4 @@ doc
 pkg
 *.gem
 .idea
-
+spec/**/Gemfile.lock
