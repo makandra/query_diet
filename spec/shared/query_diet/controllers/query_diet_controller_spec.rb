@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QueryDietController do
+describe QueryDietController, :type => :controller do
   integrate_views
 
   describe 'widget' do
