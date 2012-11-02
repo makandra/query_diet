@@ -38,9 +38,10 @@ To change the default, simply pass them to the `query_diet_widget` helper:
     <%= query_diet_widget(:bad_count => 4, :bad_time => 2000) %>
 
 
-== Rails 3 compatibility
+== Rails compatibility
 
-We cannot guarantee Rails 3 compatibility at this point, but we will upgrade the gem when Rails 3 is released.
+The gem is tested to work with Rails 2.3, Rails 3.0 and Rails 3.2.
+
 
 === Credits
 

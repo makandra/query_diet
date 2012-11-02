@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'sqlite3'
+gem 'rails', '~>3.2'
+gem 'rspec'
+gem 'rspec-rails'
+gem 'ruby-debug'
+gem 'webrat'
+gem 'database_cleaner'
+gem 'query_diet', :path => '../..'
