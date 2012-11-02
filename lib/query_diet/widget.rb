@@ -43,7 +43,8 @@ module QueryDiet
 
     module Helper
       def query_diet_widget(options = {})
-        Widget.css + Widget.html(options)
+        html = Widget.css + Widget.html(options)
+        html.respond_to?(:html_safe) ? html.html_safe : html
       end
     end
 
