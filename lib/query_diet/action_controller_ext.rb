@@ -10,7 +10,6 @@ already_inherited = defined?(ApplicationController)
     private
 
     def query_diet_logging
-      QueryDiet::Logger.reset
       yield
       QueryDiet::Widget.render(response)
     end

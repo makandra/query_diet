@@ -1,4 +1,4 @@
-in_memory:
+test:
   adapter: sqlite3
-  database: ":memory:"
+  database: db/query_diet_test.db
   verbosity: quiet

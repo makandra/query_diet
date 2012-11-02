@@ -1,7 +1,6 @@
 $LOAD_PATH << File.expand_path('../../lib', __FILE__)
 
-# Set the default environment to sqlite3's in_memory database
-ENV['RAILS_ENV'] ||= 'in_memory'
+ENV['RAILS_ENV'] ||= 'test'
 
 # Load the Rails environment and testing framework
 require File.expand_path('../app_root/config/environment', __FILE__)
