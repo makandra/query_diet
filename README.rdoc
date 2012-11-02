@@ -23,7 +23,7 @@ Now add the widget to your application layout, like
     # app/views/layout/application.html.erb
     # ...
     <body>
-      <%= query_diet_widget %>
+      <%= query_diet_widget if Rails.env.development? %>
       <%= yield %>
     </body>
    
