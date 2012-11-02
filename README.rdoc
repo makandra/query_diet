@@ -33,12 +33,10 @@ We recommend you only use the gem with the development environment.
 == Changing warning thresholds
 
 You can define when the counter turns into a red warning. The default threshold is 8 queries and 5000 miliseconds.
-To change the default, add the following to <tt>config/initializers/query_diet.rb</tt>:
+To change the default, simply pass them to the `query_diet_widget` helper:
 
-    if defined?(QueryDiet)
-      QueryDiet::Logger.bad_count = 8
-      QueryDiet::Logger.bad_time = 5000
-    end
+    <%= query_diet_widget(:bad_count => 4, :bad_time => 2000) %>
+
 
 == Rails 3 compatibility
 
@@ -47,6 +45,8 @@ We cannot guarantee Rails 3 compatibility at this point, but we will upgrade the
 === Credits
 
 Henning Koch
+
+Tobias Kraze
 
 {makandra.com}[http://makandra.com/]
 

@@ -31,23 +31,24 @@ module QueryDiet
         EOF
       end
 
-      def html
+      def html(options)
         <<-EOF
-        <div id="query_diet" class="#{QueryDiet::Logger.bad? ? 'bad' : 'good' }" onclick="this.parentNode.removeChild(this);">
+        <div id="query_diet" class="#{QueryDiet::Logger.bad?(options) ? 'bad' : 'good' }" onclick="this.parentNode.removeChild(this);">
           #{QueryDiet::Logger.count} / #{QueryDiet::Logger.time}ms
         </div>
         EOF
       end
 
     end
-  end
 
-  module Helper
-    def query_diet_widget
-      Widget.css + Widget.html
+    module Helper
+      def query_diet_widget(options = {})
+        Widget.css + Widget.html(options)
+      end
     end
+
   end
 
 end
 
-ActionView::Base.send :include, QueryDiet::Helper
+ActionView::Base.send :include, QueryDiet::Widget::Helper
