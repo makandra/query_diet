@@ -1,16 +1,6 @@
 module QueryDiet
-  class Widget
+  module Widget
     class << self
-
-      def render(response)
-        body = response.body
-        if response.content_type == "text/html" && position = body.index('</body>')
-          body.insert(position, css)
-          body.insert(position, html)
-        end
-      end
-
-      private
 
       def css
         <<-EOF
@@ -51,4 +41,13 @@ module QueryDiet
 
     end
   end
+
+  module Helper
+    def query_diet_widget
+      Widget.css + Widget.html
+    end
+  end
+
 end
+
+ActionView::Base.send :include, QueryDiet::Helper

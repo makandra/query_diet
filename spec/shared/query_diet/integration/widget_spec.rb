@@ -18,16 +18,6 @@ describe 'The widget', :type => :integration do
     response.body.should have_tag('#query_diet', /2 \/ \d+ms/)
   end
 
-  it "should not be included in pages that have no body tag" do
-    get 'query_diet/no_body_tag'
-    response.body.should_not have_tag('div#query_diet')
-  end
-
-  it "should not be included in pages that are not text/html" do
-    get 'query_diet/yaml'
-    response.body.should_not have_tag('div#query_diet')
-  end
-
   it "should be highlighted if the request was too intimate with the database" do
     QueryDiet::Logger.stub :bad? => true
     get 'query_diet/no_query'

@@ -66,5 +66,7 @@ Gem::Specification.new do |s|
     end
   else
   end
+
+  s.post_install_message = "Remember to put <%= query_diet_widget %> into your app layout."
 end
 

@@ -14,10 +14,19 @@ http://gem-session.com/files/query_diet_angry.png
 
 == Installation
 
-Install the gem with
-    sudo gem install query_diet
+Add it to your Gemfile with
+    gem 'query_diet'
 
-There is no further setup necessary after you add the <tt>query_diet</tt> dependency to your Rails application.
+
+Now add the widget to your application layout, like
+
+    # app/views/layout/application.html.erb
+    # ...
+    <body>
+      <%= query_diet_widget %>
+      <%= yield %>
+    </body>
+   
 
 We recommend you only use the gem with the development environment.
 
