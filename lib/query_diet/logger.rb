@@ -10,7 +10,9 @@ module QueryDiet
       end
 
       def log(query)
-        unless paused?
+        if paused?
+          yield
+        else
           result = nil
           time = Benchmark.realtime do
             result = yield

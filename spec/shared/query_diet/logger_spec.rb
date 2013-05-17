@@ -51,6 +51,10 @@ describe QueryDiet::Logger do
 
   describe "#paused" do
 
+    after :each do
+      QueryDiet::Logger.paused = false
+    end
+
     it "should be false by default" do
       QueryDiet::Logger.paused.should be_false
     end
@@ -67,6 +71,19 @@ describe QueryDiet::Logger do
       QueryDiet::Logger.paused = false
       Movie.create
       QueryDiet::Logger.count.should == 3
+    end
+
+    # regression
+    it "should still execute queries if paused" do
+      Movie.delete_all
+      QueryDiet::Logger.paused = true
+      Movie.count.should == 0
+      Movie.create
+      Movie.count.should == 1
+    end
+
+    it "should be false by default" do
+      QueryDiet::Logger.paused.should be_false
     end
 
   end
