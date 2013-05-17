@@ -3,19 +3,21 @@ module QueryDiet
     DEFAULT_OPTIONS = { :bad_count => 8, :bad_time => 5000 }
 
     class << self
-      attr_accessor :queries
+      attr_accessor :queries, :paused
 
       def reset
         self.queries = []
       end
 
       def log(query)
-        result = nil
-        time = Benchmark.realtime do
-          result = yield
+        unless paused?
+          result = nil
+          time = Benchmark.realtime do
+            result = yield
+          end
+          queries << [query, time] if log_query?(query)
+          result
         end
-        queries << [query, time] if log_query?(query)
-        result
       end
 
       def time
@@ -29,6 +31,10 @@ module QueryDiet
       def bad?(options = {})
         options = options.reverse_merge(DEFAULT_OPTIONS)
         count >= options[:bad_count] or time >= options[:bad_time]
+      end
+
+      def paused?
+        paused
       end
 
       private

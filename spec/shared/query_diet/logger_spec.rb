@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe QueryDiet::Logger do
+
   before do
     QueryDiet::Logger.reset
   end
@@ -47,4 +48,27 @@ describe QueryDiet::Logger do
       query[1].should == 5.1234
     end
   end
+
+  describe "#paused" do
+
+    it "should be false by default" do
+      QueryDiet::Logger.paused.should be_false
+    end
+
+    it "should pause the query count" do
+      Movie.create
+      Movie.create
+      QueryDiet::Logger.count.should == 2
+
+      QueryDiet::Logger.paused = true
+      Movie.create
+      QueryDiet::Logger.count.should == 2
+
+      QueryDiet::Logger.paused = false
+      Movie.create
+      QueryDiet::Logger.count.should == 3
+    end
+
+  end
+
 end
