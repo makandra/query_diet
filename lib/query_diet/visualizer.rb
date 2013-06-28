@@ -27,10 +27,7 @@ module QueryDiet
             background-color: black;
             color: white;
             z-index: 999;
-            padding-top: 0.1em;
-            padding-bottom: 0.1em;
-            padding-left: 0.2em;
-            padding-right: 0.2em;
+            padding: 4px 10px 10px 10px;
             font: normal bold 16px/16px Arial, sans-serif;
             cursor: pointer;
           }
