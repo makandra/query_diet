@@ -1,16 +1,8 @@
 = Query Diet
 
 Query Diet counts the number of database queries for the last request and *subtly* displays it in the upper right corner of your screen.
-The display turns red if too many queries are run, or if they take too long.
+The display turns red if too many queries are run and growth by 2px for each query exceeding the threshold of eight queries.
 This is useful to prevent {N + 1 queries}[http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations] from creeping into your code.
-
-This is Query Diet being happy about 3 requests taking 66ms:
-
-http://gem-session.com/files/query_diet_happy.png
-
-This is Query Diet being angry about 103 requests taking 164ms:
-
-http://gem-session.com/files/query_diet_angry.png
 
 == Installation
 
@@ -32,10 +24,11 @@ We recommend you only use the gem with the development environment.
 
 == Changing warning thresholds
 
-You can define when the counter turns into a red warning. The default threshold is 8 queries and 5000 miliseconds.
+You can customize the amount of base queries. Only when those are exeeded the display will turn to red.
+You can also customize the amount of pixels the display should grow per query.
 To change the default, simply pass them to the `query_diet_widget` helper:
 
-    <%= query_diet_widget(:bad_count => 4, :bad_time => 2000) %>
+    <%= query_diet_widget(:base_queries => 12, :growth_per_query => 4) %>
 
 
 == Rails compatibility
