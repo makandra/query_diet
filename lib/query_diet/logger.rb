@@ -1,6 +1,5 @@
 module QueryDiet
   class Logger
-    DEFAULT_OPTIONS = { :bad_count => 8, :bad_time => 5000 }
 
     class << self
       attr_accessor :queries, :paused
@@ -28,11 +27,6 @@ module QueryDiet
 
       def count
         queries.size
-      end
-
-      def bad?(options = {})
-        options = options.reverse_merge(DEFAULT_OPTIONS)
-        count >= options[:bad_count] or time >= options[:bad_time]
       end
 
       def paused?
