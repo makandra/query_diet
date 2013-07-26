@@ -8,6 +8,7 @@ Gem::Specification.new do |gem|
   gem.description   = "Rails database query counter that stays out of your way"
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/makandra/query_diet"
+  gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
