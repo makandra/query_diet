@@ -42,7 +42,7 @@ module QueryDiet
       private
 
       def log_query?(query)
-        query =~ /^(select|create|update|delete|insert)\b/i
+        query =~ /^\s*(select|create|update|delete|insert)\b/i
       end
     end
 
