@@ -17,6 +17,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = QueryDiet::VERSION
 
-  gem.post_install_message = "Remember to put <%= query_diet_widget %> into your app layout."
+  gem.post_install_message = "Remember to put <%= query_diet_widget if Rails.env.development? %> into your app layout."
 end
 
