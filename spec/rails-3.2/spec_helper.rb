@@ -16,6 +16,12 @@ print "\033[30m" # dark gray text
 ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
 print "\033[0m"
 
+# For some reason the first time the SqliteAdapter fetches schema information it
+# raises an error
+Movie.create rescue nil
+
+# Movie.reset_column_information
+
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.use_instantiated_fixtures  = false
