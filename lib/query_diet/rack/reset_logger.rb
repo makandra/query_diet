@@ -18,9 +18,9 @@ end
 if defined?(Rails::Railtie)
   class QueryDiet::Railtie < Rails::Railtie
     initializer 'query_diet.insert_middleware' do |app|
-      app.config.middleware.use 'QueryDiet::Rack::ResetLogger'
+      app.config.middleware.use QueryDiet::Rack::ResetLogger
     end
   end
 else
-  ActionController::Dispatcher.middleware.use('QueryDiet::Rack::ResetLogger')
+  ActionController::Dispatcher.middleware.use(QueryDiet::Rack::ResetLogger)
 end
