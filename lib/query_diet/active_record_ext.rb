@@ -6,6 +6,7 @@ ActiveRecord::ConnectionAdapters::AbstractAdapter.class_eval do
     end
   end
 
-  alias_method_chain :log, :query_diet
+  alias_method :log_without_query_diet, :log
+  alias_method :log, :log_with_query_diet
 
 end
