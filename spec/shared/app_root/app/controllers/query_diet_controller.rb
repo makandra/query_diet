@@ -7,7 +7,7 @@ class QueryDietController < ApplicationController
 
   def two_queries
     Movie.create!
-    Movie.all
+    Movie.all.to_a
   end
 
 end
