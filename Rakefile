@@ -1,4 +1,4 @@
-require 'rake'
+require 'bundler/setup'
 require 'bundler/gem_tasks'
 
 desc 'Default: Run all specs.'
@@ -38,12 +38,7 @@ end
 def for_each_directory_of(path, &block)
   Dir[path].sort.each do |rakefile|
     directory = File.dirname(rakefile)
-    if (RUBY_VERSION < "1.9" && directory =~ /rails-4\.2/) ||
-      (RUBY_VERSION >= "1.9" && directory =~ /rails-2\.3/)
-      puts '', "\033[43mSkipping #{directory} for this ruby version\033[0m", ''
-    else
-      puts '', "\033[44m#{directory}\033[0m", ''
-      block.call(directory)
-    end
+    puts '', "\033[44m#{directory}\033[0m", ''
+    block.call(directory)
   end
 end
