@@ -12,9 +12,8 @@ require 'database_cleaner'
 FileUtils.rm(Dir.glob("#{Rails.root}/db/*.db"), :force => true)
 
 # Run the migrations
-print "\033[30m" # dark gray text
+ActiveRecord::Schema.verbose = false
 ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
-print "\033[0m"
 
 # For some reason the first time the SqliteAdapter fetches schema information it
 # raises an error
