@@ -12,9 +12,8 @@ require 'database_cleaner'
 FileUtils.rm(Dir.glob("#{Rails.root}/db/*.db"), :force => true)
 
 # Run the migrations
-print "\033[30m" # dark gray text
+ActiveRecord::Schema.verbose = false
 ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
-print "\033[0m"
 
 # For some reason the first time the SqliteAdapter fetches schema information it
 # raises an error
@@ -25,7 +24,7 @@ Movie.create rescue nil
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.use_instantiated_fixtures  = false
-  config.before(:each) do
-    DatabaseCleaner.clean
-  end
+  config.raise_errors_for_deprecations!
+  config.infer_spec_type_from_file_location!
+  config.before { DatabaseCleaner.clean }
 end
