@@ -12,6 +12,8 @@ This is Query Diet being angry about 103 requests taking 164ms:
 
 http://blog.makandra.com/images/articles/2010-06-25-solving-the-n-1-query-problem-with-query-diet/query_diet_angry.png
 
+
+
 == Installation
 
 Add it to your Gemfile with
@@ -40,7 +42,9 @@ To change the default, simply pass them to the `query_diet_widget` helper:
 
 == Rails compatibility
 
-The gem is tested to work with Rails 2.3, Rails 3.0 and Rails 3.2.
+The gem is tested to work with Rails 3.2+ and Ruby 2.0+.
+
+For Rails 2.3 and Ruby 1.8.7 support, use a version <= 0.5.4.
 
 
 === Credits
