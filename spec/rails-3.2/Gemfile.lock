@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    query_diet (0.5.4)
+    query_diet (0.6.0)
 
 GEM
   remote: http://rubygems.org/

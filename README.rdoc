@@ -44,7 +44,7 @@ To change the default, simply pass them to the `query_diet_widget` helper:
 
 The gem is tested to work with Rails 3.2+ and Ruby 2.0+.
 
-For Rails 2.3 and Ruby 1.8.7 support, use a version <= 0.5.4.
+For Rails 2.3 and Ruby 1.8.7 support, use a version < 0.6.
 
 
 === Credits
