@@ -7,7 +7,7 @@ Gem::Specification.new "query_diet", QueryDiet::VERSION do |gem|
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/makandra/query_diet"
   gem.license       = 'MIT'
-  gem.files         = `git ls-files README.rdoc MIT-LICENSE lib`.split($\)
+  gem.files         = `git ls-files README.md MIT-LICENSE lib`.split($\)
   gem.required_ruby_version = '>= 2.0.0'
 end
 
