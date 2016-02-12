@@ -1,5 +1,4 @@
-Query Diet [![Build Status](https://travis-ci.org/makandra/query_diet.svg?branch=master)](https://travis-ci.org/makandra/query_diet)
-=============
+= Query Diet {<img src="https://travis-ci.org/makandra/query_diet.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/makandra/query_diet]
 
 Query Diet counts the number of database queries for the last request and *subtly* displays it in the upper right corner of your screen.
 The display turns red if too many queries are run, or if they take too long.
