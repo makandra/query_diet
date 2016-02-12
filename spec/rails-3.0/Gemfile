@@ -1,8 +1,0 @@
-source 'http://rubygems.org'
-
-gem 'sqlite3'
-gem 'rails', '=3.0.17'
-gem 'rspec'
-gem 'rspec-rails'
-gem 'query_diet', :path => '../..'
-gem 'webrat'

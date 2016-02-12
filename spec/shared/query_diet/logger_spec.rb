@@ -51,12 +51,16 @@ describe QueryDiet::Logger do
 
   describe "#paused" do
 
-    after :each do
+    before do
+      QueryDiet::Logger.paused = false
+    end
+
+    after do
       QueryDiet::Logger.paused = false
     end
 
     it "should be false by default" do
-      QueryDiet::Logger.paused.should be_false
+      QueryDiet::Logger.paused.should == false
     end
 
     it "should pause the query count" do
@@ -83,7 +87,7 @@ describe QueryDiet::Logger do
     end
 
     it "should be false by default" do
-      QueryDiet::Logger.paused.should be_false
+      QueryDiet::Logger.paused.should == false
     end
 
   end
