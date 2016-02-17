@@ -23,7 +23,7 @@ Movie.create rescue nil
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.use_instantiated_fixtures  = false
-  config.before(:each) do
-    DatabaseCleaner.clean
-  end
+  config.expect_with(:rspec) { |c| c.syntax = :should }
+  config.mock_with(:rspec) { |c| c.syntax = :should }
+  config.before { DatabaseCleaner.clean }
 end

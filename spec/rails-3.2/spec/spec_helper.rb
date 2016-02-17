@@ -26,4 +26,11 @@ RSpec.configure do |config|
   config.raise_errors_for_deprecations!
   config.infer_spec_type_from_file_location!
   config.before { DatabaseCleaner.clean }
+  config.expect_with(:rspec) { |c| c.syntax = :should }
+  config.mock_with(:rspec) { |c| c.syntax = :should }
+end
+
+# stop duplicate test runner output, autorun is triggered by rails
+if RUBY_VERSION > "2.2.0"
+  Test::Unit::Runner.class_variable_set(:@@stop_auto_run, true)
 end

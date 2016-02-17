@@ -14,7 +14,7 @@ describe QueryDiet::Widget::Helper, :type => :helper do
 
   it "should contain the number of requests and the duration spent running queries" do
     QueryDiet::Logger.stub :count => 78, :time => 43500
-    helper.query_diet_widget.should have_selector('div#query_diet', :content => "78 / 43500ms")
+    helper.query_diet_widget.should have_selector('div#query_diet', :text => "78 / 43500ms")
   end
 
   it 'should allow to set the request threshold' do
