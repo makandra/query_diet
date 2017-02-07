@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    query_diet (0.6.0)
+    query_diet (0.6.1)
 
 GEM
   remote: http://rubygems.org/
@@ -137,4 +137,4 @@ DEPENDENCIES
   test-unit-minitest
 
 BUNDLED WITH
-   1.11.2
+   1.13.6
