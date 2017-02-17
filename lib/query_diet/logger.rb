@@ -10,15 +10,24 @@ module QueryDiet
       end
 
       def log(query)
-        if paused?
-          yield
-        else
-          result = nil
-          time = Benchmark.realtime do
-            result = yield
+        time = 0
+
+        begin
+          if paused?
+            yield
+          else
+            result = nil
+            time = Benchmark.realtime do
+              result = yield
+            end
+            result
           end
+
+        ensure
+          # We need this in an ensure because it's possible the adapter will
+          # include a break, in which case we otherwise wouldn't get past the
+          # call to Benchmark#realtime.
           queries << [query, time] if log_query?(query)
-          result
         end
       end
 
@@ -42,7 +51,7 @@ module QueryDiet
       private
 
       def log_query?(query)
-        query =~ /^(select|create|update|delete|insert)\b/i
+        query =~ /^\s*(select|create|update|delete|insert)\b/i
       end
     end
 
