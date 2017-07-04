@@ -11,7 +11,7 @@ module QueryDiet
             right: 0;
             background-color: black;
             color: white;
-            z-index: 999;
+            z-index: 99999;
             padding: 4px 6px;
             font: normal bold 12px/12px Arial, sans-serif;
             cursor: pointer;

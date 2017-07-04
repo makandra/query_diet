@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    query_diet (0.6.1)
+    query_diet (0.6.2)
 
 GEM
   remote: http://rubygems.org/
@@ -145,4 +145,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.13.6
+   1.15.1
