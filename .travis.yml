@@ -1,9 +1,7 @@
 language: ruby
 sudo: false
 cache: bundler
-notifications:
-  email:
-    - fail@makandra.de
+
 branches:
   only:
     - master
