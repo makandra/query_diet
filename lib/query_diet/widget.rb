@@ -2,9 +2,9 @@ module QueryDiet
   module Widget
     class << self
 
-      def css
+      def css(nonce_attribute)
         <<-EOF
-        <style type="text/css"><!--
+        <style type="text/css"#{nonce_attribute}><!--
           div#query_diet {
             position: absolute;
             top: 0;
@@ -31,9 +31,19 @@ module QueryDiet
         EOF
       end
 
+      def js(nonce_attribute)
+        <<-EOF
+        <script type="text/javascript"#{nonce_attribute}>
+          document.getElementById("query_diet").addEventListener("click", function() {
+            this.parentNode.removeChild(this);
+          });
+        </script>
+        EOF
+      end
+
       def html(options)
         <<-EOF
-        <div id="query_diet" class="#{QueryDiet::Logger.bad?(options) ? 'bad' : 'good' }" onclick="this.parentNode.removeChild(this);">
+        <div id="query_diet" class="#{QueryDiet::Logger.bad?(options) ? 'bad' : 'good' }">
           #{QueryDiet::Logger.count} / #{QueryDiet::Logger.time}ms
         </div>
         EOF
@@ -43,7 +53,12 @@ module QueryDiet
 
     module Helper
       def query_diet_widget(options = {})
-        html = Widget.css + Widget.html(options)
+        default_html_options = {:nonce => false}
+        options = options.reverse_merge(default_html_options)
+
+        nonce_attribute = options.fetch(:nonce) ? " nonce=\"#{content_security_policy_nonce}\"" : ''
+
+        html = Widget.css(nonce_attribute) + Widget.html(options) + Widget.js(nonce_attribute)
         html.respond_to?(:html_safe) ? html.html_safe : html
       end
     end

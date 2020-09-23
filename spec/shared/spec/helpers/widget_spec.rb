@@ -29,4 +29,21 @@ describe QueryDiet::Widget::Helper, :type => :helper do
     helper.query_diet_widget(:bad_time => 2000).should have_selector('div#query_diet.bad')
   end
 
+  it 'should add a nonce if the corresponding option is set to true' do
+    helper.stub :content_security_policy_nonce => 'nonce_abcdef'
+    helper.query_diet_widget(:nonce => true).should include('<style type="text/css" nonce="nonce_abcdef">')
+    helper.query_diet_widget(:nonce => true).should include('<script type="text/javascript" nonce="nonce_abcdef">')
+  end
+
+
+  it 'should not add a nonce if the corresponding option is set to false' do
+    helper.query_diet_widget(:nonce => false).should include('<style type="text/css">')
+    helper.query_diet_widget(:nonce => false).should include('<script type="text/javascript">')
+  end
+
+  it 'should not add a nonce if no option is set' do
+    helper.query_diet_widget.should include('<style type="text/css">')
+    helper.query_diet_widget.should include('<script type="text/javascript">')
+  end
+
 end

@@ -45,6 +45,25 @@ To change the default, simply pass them to the `query_diet_widget` helper:
 <%= query_diet_widget(:bad_count => 4, :bad_time => 2000) %>
 ```
 
+### Content Security Policy
+
+You can pass whether to use a nonce for style and script tags.
+Note that the key must be a symbol like in the example below, otherwise it defaults to `false`.
+
+```Erb
+<%= query_diet_widget(:nonce => true) if Rails.env.development? %>
+```
+
+In your content security policy initializer of the project you should set the nonce to those directives:
+```Erb
+Rails.application.config.content_security_policy_nonce_directives = %w[script-src style-src]
+```
+
+When you do not want to use a nonce, but use a style tag, for example, you could use `unsafe_inline`:
+```Erb
+Rails.application.config.content_security_policy do |policy|
+  policy.style_src   :self, :unsafe_inline
+```
 
 ### Rails compatibility
 
