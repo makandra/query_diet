@@ -47,7 +47,8 @@ To change the default, simply pass them to the `query_diet_widget` helper:
 
 ### Content Security Policy
 
-You can pass whether to use a nonce for style and script tags. This option is per default `false`.
+You can pass whether to use a nonce for style and script tags.
+Note that the key must be a symbol like in the example below, otherwise it defaults to `false`.
 
 ```Erb
 <%= query_diet_widget(:nonce => true) if Rails.env.development? %>
