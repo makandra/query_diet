@@ -15,9 +15,9 @@ jobs:
         include:
         - ruby: 2.3.0
         - ruby: 2.4.0
-	    - ruby: 2.5.0
+        - ruby: 2.5.0
         - ruby: 2.6.0
-    steps: 
+    steps:
     - uses: actions/checkout@v2
     - name: Install ruby
       uses: ruby/setup-ruby@v1
