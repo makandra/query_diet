@@ -1,4 +1,4 @@
-Query Diet [![Build Status](https://travis-ci.org/makandra/query_diet.svg?branch=master)](https://travis-ci.org/makandra/query_diet)
+Query Diet [![Tests](https://github.com/makandra/query_diet/workflows/Tests/badge.svg)](https://github.com/makandra/query_diet/actions)
 ==========
 
 Query Diet counts the number of database queries for the last request and *subtly* displays it in the upper right corner of your screen.
