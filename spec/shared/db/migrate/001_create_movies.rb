@@ -1,4 +1,6 @@
-class CreateMovies < ActiveRecord::Migration
+migration_class = Rails.version > '5' ? ActiveRecord::Migration[4.2] : ActiveRecord::Migration
+
+class CreateMovies < migration_class
 
   def self.up
     create_table :movies do |t|

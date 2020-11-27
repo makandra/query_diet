@@ -12,7 +12,7 @@ FileUtils.rm(Dir.glob("#{Rails.root}/db/*.db"), :force => true)
 
 # Run the migrations
 ActiveRecord::Schema.verbose = false
-ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
+ActiveRecord::MigrationContext.new("#{Rails.root}/db/migrate").migrate
 
 # For some reason the first time the SqliteAdapter fetches schema information it
 # raises an error
