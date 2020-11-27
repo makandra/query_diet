@@ -1,6 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_view/railtie'
+# require 'sprockets/railtie'
+require 'rails/test_unit/railtie'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,6 +31,8 @@ module HasDefaultSpecApp
     config.action_mailer.delivery_method = :test
 
     config.active_support.deprecation = :stderr
+
+    config.active_record.sqlite3.represent_boolean_as_integer = true
 
     config.root = File.expand_path('../..', __FILE__)
 
