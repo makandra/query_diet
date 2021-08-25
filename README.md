@@ -67,7 +67,7 @@ Rails.application.config.content_security_policy do |policy|
 
 ### Rails compatibility
 
-The gem is tested to work with Rails 3.2+ and Ruby 2.3+.
+The gem is tested to work with Rails 3.2+ and Ruby 2.5.8+.
 
 For Rails 2.3 and Ruby 1.8.7 support, use a version < 0.6.
 
