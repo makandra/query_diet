@@ -13,10 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        - ruby: 2.3.8
-          directory: 'spec/rails-3.2'
-        - ruby: 2.4.10
-          directory: 'spec/rails-3.2'
         - ruby: 2.5.8
           directory: 'spec/rails-3.2'
         - ruby: 2.5.8
