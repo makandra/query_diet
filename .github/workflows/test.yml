@@ -31,8 +31,12 @@ jobs:
           directory: 'spec/rails-5.2'
         - ruby: 2.7.2
           directory: 'spec/rails-6.1'
+        - ruby: 2.7.2
+          directory: 'spec/rails-7.0'
         - ruby: 3.0.0
           directory: 'spec/rails-6.1'
+        - ruby: 3.0.0
+          directory: 'spec/rails-7.0'
     steps:
     - uses: actions/checkout@v2
     - name: Install ruby

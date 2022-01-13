@@ -33,11 +33,17 @@ end
 
 def each_rails_version
   Dir['spec/rails-*'].sort.each do |directory|
-    if directory.include?('5.') && RUBY_VERSION < "2.2.0"
-      puts "Skipping #{directory} since rails 5+ is not supported on #{RUBY_VERSION}"
+    rails_version = /spec\/rails-(\d+\.\d+)/.match(directory)[1].to_f
+    if rails_version >= 7.0 && RUBY_VERSION < "2.7.0"
+      puts "Skipping #{directory} since rails 7+ is not supported on ruby #{RUBY_VERSION}"
+    elsif rails_version < 5.0 && RUBY_VERSION >= "2.7.0"
+      puts "Skipping #{directory} since rails < 5 is not supported on ruby #{RUBY_VERSION}"
+    elsif rails_version < 6.0 && RUBY_VERSION >= "3.0.0"
+      puts "Skipping #{directory} since rails < 6 is not supported on ruby #{RUBY_VERSION}"
     else
       puts '', "\033[44m#{directory}\033[0m", ''
-      Bundler.with_clean_env { yield directory }
+      unbundled_env_method = Bundler.respond_to?(:with_unbundled_env) ? :with_unbundled_env : :with_clean_env
+      Bundler.send(unbundled_env_method) { yield directory }
     end
   end
 end
