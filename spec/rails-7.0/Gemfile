@@ -1,0 +1,9 @@
+source 'http://rubygems.org'
+
+gem 'sqlite3'
+gem 'rails', '=7.0.1'
+gem 'rspec'
+gem 'rspec-rails'
+gem 'database_cleaner'
+gem 'query_diet', :path => '../..'
+gem 'capybara'
