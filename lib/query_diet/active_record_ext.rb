@@ -1,7 +1,13 @@
 module QueryDiet
   module ActiveRecordExt
-    def log(query, *)
-      QueryDiet::Logger.log(query) { super }
+    if RUBY_VERSION >= '3'
+      def log(query, *, **)
+        QueryDiet::Logger.log(query) { super }
+      end
+    else
+      def log(query, *)
+        QueryDiet::Logger.log(query) { super }
+      end
     end
   end
 end
