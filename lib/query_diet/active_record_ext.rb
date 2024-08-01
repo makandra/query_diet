@@ -12,4 +12,6 @@ module QueryDiet
   end
 end
 
-ActiveRecord::ConnectionAdapters::AbstractAdapter.send(:prepend, QueryDiet::ActiveRecordExt)
+ActiveSupport.on_load(:active_record) do
+  ActiveRecord::ConnectionAdapters::AbstractAdapter.send(:prepend, QueryDiet::ActiveRecordExt)
+end
