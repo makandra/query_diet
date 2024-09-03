@@ -1,0 +1,19 @@
+source 'https://rubygems.org'
+
+# Runtime dependencies
+gem 'rails', '=6.1.2.1'
+
+# Development dependencies
+gem 'rspec'
+gem 'rspec-rails'
+gem 'sqlite3'
+gem 'database_cleaner'
+gem 'capybara'
+gem 'gemika'
+
+# For Ruby 3.1.1
+gem 'matrix'
+gem 'net-smtp'
+
+# Gem under test
+gem 'query_diet', :path => '.'
