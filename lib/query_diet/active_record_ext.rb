@@ -1,6 +1,6 @@
 module QueryDiet
   module ActiveRecordExt
-    if RUBY_VERSION >= '3'
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('3')
       def log(query, *, **)
         QueryDiet::Logger.log(query) { super }
       end

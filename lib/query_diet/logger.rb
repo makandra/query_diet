@@ -1,3 +1,5 @@
+require 'benchmark'
+
 module QueryDiet
   class Logger
     DEFAULT_OPTIONS = { :bad_count => 8, :bad_time => 5000 }

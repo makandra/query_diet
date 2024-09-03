@@ -2,3 +2,8 @@ doc
 pkg
 *.gem
 .idea
+*.db
+*.log
+.bundle
+spec/support/database.yml
+.byebug_history

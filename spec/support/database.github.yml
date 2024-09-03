@@ -1,0 +1,13 @@
+mysql:
+  database: test
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: 3306
+
+postgresql:
+  database: test
+  host: localhost
+  username: postgres
+  password: postgres
+  port: 5432
