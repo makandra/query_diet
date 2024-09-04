@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 
-module HasDefaultSpecApp
+module QueryDietSpecApp
   class Application < Rails::Application
     config.encoding = "utf-8"
 

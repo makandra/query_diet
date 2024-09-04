@@ -20,7 +20,7 @@ require 'rails/test_unit/railtie'
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 
-module HasDefaultSpecApp
+module QueryDietSpecApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
