@@ -86,8 +86,8 @@ GEM
     database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
     erubi (1.10.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
+    globalid (1.0.0)
+      activesupport (>= 5.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     loofah (2.9.0)
@@ -97,19 +97,24 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
+    matrix (0.4.2)
     method_source (1.0.0)
     mimemagic (0.3.10)
       nokogiri (~> 1)
       rake
     mini_mime (1.0.2)
-    mini_portile2 (2.5.0)
+    mini_portile2 (2.8.7)
     minitest (5.14.4)
+    net-protocol (0.2.2)
+      timeout
+    net-smtp (0.5.0)
+      net-protocol
     nio4r (2.5.7)
-    nokogiri (1.11.2)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.13.10)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     public_suffix (4.0.6)
-    racc (1.5.2)
+    racc (1.8.1)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -171,6 +176,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     thor (1.1.0)
+    timeout (0.4.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     websocket-driver (0.7.3)
@@ -186,6 +192,8 @@ PLATFORMS
 DEPENDENCIES
   capybara
   database_cleaner
+  matrix
+  net-smtp
   query_diet!
   rails (= 6.1.2.1)
   rspec
@@ -193,4 +201,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.3
+   2.5.17

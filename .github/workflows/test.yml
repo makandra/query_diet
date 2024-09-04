@@ -38,6 +38,8 @@ jobs:
         - ruby: 3.0.0
           directory: 'spec/rails-7.0'
         - ruby: 3.1.1
+          directory: 'spec/rails-6.1'
+        - ruby: 3.1.1
           directory: 'spec/rails-7.0'
     steps:
     - uses: actions/checkout@v2
