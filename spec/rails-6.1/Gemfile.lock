@@ -4,7 +4,7 @@ PATH
     query_diet (0.7.2)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actioncable (6.1.2.1)
       actionpack (= 6.1.2.1)
