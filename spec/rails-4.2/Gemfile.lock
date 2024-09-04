@@ -4,7 +4,7 @@ PATH
     query_diet (0.7.2)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (4.2.11.3)
       actionpack (= 4.2.11.3)
