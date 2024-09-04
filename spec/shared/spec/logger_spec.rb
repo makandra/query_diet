@@ -6,13 +6,20 @@ describe QueryDiet::Logger do
     QueryDiet::Logger.reset
   end
 
+  def mock_realtime(seconds)
+    Benchmark.should_receive(:realtime).at_least(:once).and_wrap_original do |original_method, *args, &block|
+      original_method.call(*args, &block)
+      seconds
+    end
+  end
+
   describe "#reset" do
     it "should reset count/time/queries" do
       QueryDiet::Logger.count.should == 0
       QueryDiet::Logger.time.should == 0
       QueryDiet::Logger.queries.should == []
 
-      Benchmark.should_receive(:realtime).at_least(:once).and_return(5)
+      mock_realtime(5)
       Movie.create
 
       QueryDiet::Logger.count.should > 0
@@ -31,7 +38,7 @@ describe QueryDiet::Logger do
 
   describe "#time" do
     it "should return the number of miliseconds spent running database queries since the last reset" do
-      Benchmark.should_receive(:realtime).at_least(:once).and_return(5)
+      mock_realtime(5)
       Movie.create
       QueryDiet::Logger.time.should == 5000
     end
@@ -39,7 +46,7 @@ describe QueryDiet::Logger do
 
   describe "#queries" do
     it "should return the queries since last reset" do
-      Benchmark.should_receive(:realtime).at_least(:once).and_return(5.1234)
+      mock_realtime(5.1234)
       Movie.create
       QueryDiet::Logger.queries.size.should == 1
       query = QueryDiet::Logger.queries.first
