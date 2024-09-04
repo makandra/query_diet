@@ -67,7 +67,20 @@ Rails.application.config.content_security_policy do |policy|
 
 ### Rails compatibility
 
-The gem is tested to work with Rails 3.2+ and Ruby 2.5.8+.
+The gem is tested against
+
+| Versions  |     Ruby 2.5.8     |     Ruby 2.6.6     |     Ruby 2.7.2     |     Ruby 3.0.0     |     Ruby 3.1.1     |     Ruby 3.3.3     |
+|-----------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
+| Rails 3.2 | :heavy_check_mark: |        :x:         |        :x:         |        :x:         |        :x:         |        :x:         |
+| Rails 4.2 | :heavy_check_mark: | :heavy_check_mark: |        :x:         |        :x:         |        :x:         |        :x:         |
+| Rails 5.2 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        :x:         |        :x:         |        :x:         |
+| Rails 6.1 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        :x:         |
+| Rails 7.0 |        :x:         |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Rails 7.1 |        :x:         |        :x:         |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
+| Rails 7.2 |        :x:         |        :x:         |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
+
+
+Later versions might work, earlier will not.
 
 For Rails 2.3 and Ruby 1.8.7 support, use a version < 0.6.
 

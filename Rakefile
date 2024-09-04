@@ -34,7 +34,9 @@ end
 def each_rails_version
   Dir['spec/rails-*'].sort.each do |directory|
     rails_version = /spec\/rails-(\d+\.\d+)/.match(directory)[1].to_f
-    if rails_version >= 7.0 && RUBY_VERSION < "2.7.0"
+    if rails_version >= 7.2 && RUBY_VERSION < "3.1.0"
+      puts "Skipping #{directory} since rails 7.2+ is not supported on ruby #{RUBY_VERSION}"
+    elsif rails_version >= 7.0 && RUBY_VERSION < "2.7.0"
       puts "Skipping #{directory} since rails 7+ is not supported on ruby #{RUBY_VERSION}"
     elsif rails_version < 5.0 && RUBY_VERSION >= "2.7.0"
       puts "Skipping #{directory} since rails < 5 is not supported on ruby #{RUBY_VERSION}"
