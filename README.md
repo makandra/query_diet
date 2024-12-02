@@ -1,5 +1,21 @@
-Query Diet [![Tests](https://github.com/makandra/query_diet/workflows/Tests/badge.svg)](https://github.com/makandra/query_diet/actions)
-==========
+<p>
+  <a href="https://makandra.de/">
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="media/makandra-with-bottom-margin.light.svg">
+      <source media="(prefers-color-scheme: dark)" srcset="media/makandra-with-bottom-margin.dark.svg">
+      <img align="right" width="25%" alt="makandra" src="media/makandra-with-bottom-margin.light.svg">
+    </picture>
+  </a>
+
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="media/logo.light.shapes.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="media/logo.dark.shapes.svg">
+    <img width="215" alt="Query Diet" role="heading" aria-level="1" src="media/logo.light.shapes.svg">
+  </picture>
+</p>
+
+[![Tests](https://github.com/makandra/query_diet/workflows/Tests/badge.svg)](https://github.com/makandra/query_diet/actions)
+
 
 Query Diet counts the number of database queries for the last request and *subtly* displays it in the upper right corner of your screen.
 The display turns red if too many queries are run, or if they take too long.
@@ -7,11 +23,11 @@ This is useful to prevent [N + 1 queries](http://guides.rubyonrails.org/active_r
 
 This is Query Diet being happy about 3 requests taking 66ms:
 
-![](http://blog.makandra.com/images/articles/2010-06-25-solving-the-n-1-query-problem-with-query-diet/query_diet_happy.png)
+![Query Diet is happy](media/query_diet_happy.png)
 
 This is Query Diet being angry about 103 requests taking 164ms:
 
-![](http://blog.makandra.com/images/articles/2010-06-25-solving-the-n-1-query-problem-with-query-diet/query_diet_angry.png)
+![Query Diet is angry](media/query_diet_angry.png)
 
 
 Installation
