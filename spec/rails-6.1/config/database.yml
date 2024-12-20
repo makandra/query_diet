@@ -1,4 +1,0 @@
-test:
-  adapter: sqlite3
-  database: db/query_diet_test.db
-  verbosity: quiet

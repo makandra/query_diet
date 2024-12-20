@@ -1,0 +1,10 @@
+mysql:
+  database: query_diet_test
+  host: localhost
+  username: root
+  password: secret
+
+postgresql:
+  database: query_diet_test
+  user:
+  password:

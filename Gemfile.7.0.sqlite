@@ -1,0 +1,16 @@
+source 'https://rubygems.org'
+
+# Runtime dependencies
+gem 'rails', '=7.0.1'
+
+# Development dependencies
+gem 'rspec'
+gem 'rspec-rails'
+gem 'sqlite3'
+gem 'database_cleaner'
+gem 'capybara'
+gem 'byebug'
+gem 'gemika'
+
+# Gem under test
+gem 'query_diet', :path => '.'
