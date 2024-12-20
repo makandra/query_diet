@@ -12,7 +12,7 @@ FileUtils.rm(Dir.glob("#{Rails.root}/db/*.db"), :force => true)
 
 # Run the migrations
 ActiveRecord::Schema.verbose = false
-ActiveRecord::Migrator.migrate("#{Rails.root}/db/migrate")
+ActiveRecord::MigrationContext.new("#{Rails.root}/db/migrate").migrate
 
 # For some reason the first time the SqliteAdapter fetches schema information it
 # raises an error
@@ -21,16 +21,7 @@ Movie.create rescue nil
 # Movie.reset_column_information
 
 RSpec.configure do |config|
-  config.use_transactional_fixtures = false
-  config.use_instantiated_fixtures  = false
-  config.raise_errors_for_deprecations!
-  config.infer_spec_type_from_file_location!
-  config.before { DatabaseCleaner.clean }
   config.expect_with(:rspec) { |c| c.syntax = :should }
   config.mock_with(:rspec) { |c| c.syntax = :should }
-end
-
-# stop duplicate test runner output, autorun is triggered by rails
-if RUBY_VERSION > "2.2.0"
-  Test::Unit::Runner.class_variable_set(:@@stop_auto_run, true)
+  config.before { DatabaseCleaner.clean }
 end
