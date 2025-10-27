@@ -85,13 +85,14 @@ Rails.application.config.content_security_policy do |policy|
 
 The gem is tested against
 
-| Versions  |     Ruby 2.7.8     |     Ruby 3.0.0     |     Ruby 3.1.6     |     Ruby 3.3.4     |
-|-----------|:------------------:|:------------------:|:------------------:|:------------------:|
-| Rails 6.1 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        :x:         |
-| Rails 7.0 |        :x:         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Rails 7.1 |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
-| Rails 7.2 |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
-| Rails 8.0 |        :x:         |        :x:         |        :x:         | :heavy_check_mark: |
+| Versions  |     Ruby 2.7.8     |     Ruby 3.0.0     |     Ruby 3.1.6     |     Ruby 3.3.4     |     Ruby 3.4.4     |
+|-----------|:------------------:|:------------------:|:------------------:|:------------------:|:------------------:|
+| Rails 6.1 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        :x:         |        :x:         |
+| Rails 7.0 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |        :x:         |
+| Rails 7.1 |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |        :x:         |
+| Rails 7.2 |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |        :x:         |
+| Rails 8.0 |        :x:         |        :x:         |        :x:         | :heavy_check_mark: |        :x:         |
+| Rails 8.1 |        :x:         |        :x:         |        :x:         | :heavy_check_mark: | :heavy_check_mark: |
 
 
 Later versions might work, earlier will not.

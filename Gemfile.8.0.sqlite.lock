@@ -138,7 +138,7 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.16.7-x86_64-linux)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     psych (5.1.2)
       stringio
@@ -209,7 +209,7 @@ GEM
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
     securerandom (0.3.1)
-    sqlite3 (2.4.1-x86_64-linux-gnu)
+    sqlite3 (2.7.4-x86_64-linux-gnu)
     stringio (3.1.1)
     thor (1.3.2)
     timeout (0.4.1)

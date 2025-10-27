@@ -5,7 +5,7 @@ describe QueryDiet::Logger do
   end
 
   def mock_realtime(seconds)
-    Benchmark.should_receive(:realtime).at_least(:once).and_wrap_original do |original_method, *args, &block|
+    expect(QueryDiet::Benchmark).to receive(:realtime).at_least(:once).and_wrap_original do |original_method, *args, &block|
       original_method.call(*args, &block)
       seconds
     end
