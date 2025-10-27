@@ -1,5 +1,3 @@
-require 'benchmark'
-
 module QueryDiet
   class Logger
     DEFAULT_OPTIONS = { :bad_count => 8, :bad_time => 5000 }
@@ -16,9 +14,9 @@ module QueryDiet
           yield
         else
           result = nil
-          time = Benchmark.realtime do
-            result = yield
-          end
+          start_time = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+          result = yield
+          time = Process.clock_gettime(Process::CLOCK_MONOTONIC) - start_time
           queries << [query, time] if log_query?(query)
           result
         end

@@ -5,9 +5,11 @@ describe QueryDiet::Logger do
   end
 
   def mock_realtime(seconds)
-    Benchmark.should_receive(:realtime).at_least(:once).and_wrap_original do |original_method, *args, &block|
-      original_method.call(*args, &block)
-      seconds
+    call_count = 0
+    Process.should_receive(:clock_gettime).with(Process::CLOCK_MONOTONIC).at_least(:twice).and_wrap_original do
+      result = call_count.even? ? (call_count / 2) * seconds : ((call_count / 2) + 1) * seconds
+      call_count += 1
+      result
     end
   end
 
