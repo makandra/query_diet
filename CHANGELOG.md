@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html
 ## Unreleased
 
 ### Compatible changes
+
+## 0.7.3 2025-10-27
+- Handle `Benchmark` on Rails 8.1 with Ruby 3.4+. Thanks to @trak3r (for reporting) and @joshRpowell (for fixing).
+
 ## 0.7.2 2024-08-20
 - Fix: Use ActiveSupport.on_load for extending ActiveRecord
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    query_diet (0.7.2)
+    query_diet (0.7.3)
 
 GEM
   remote: https://rubygems.org/
@@ -110,7 +110,6 @@ GEM
     matrix (0.4.2)
     method_source (1.1.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.9)
     minitest (5.25.1)
     net-imap (0.2.3)
       digest
@@ -128,8 +127,7 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.18.10)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     public_suffix (4.0.6)
     racc (1.8.1)
